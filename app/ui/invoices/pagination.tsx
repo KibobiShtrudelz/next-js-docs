@@ -15,10 +15,6 @@ export default function Pagination({ totalPages }: { totalPages: number }) {
   const currentPage = Number(searchParams.get('page')) || 1;
   const allPages = generatePagination(currentPage, totalPages);
 
-  /**
-   * От Here's a breakdown of what's happening:
-   * в https://nextjs.org/learn/dashboard-app/adding-search-and-pagination#adding-pagination
-   */
   const createPageURL = (pageNumber: number | string) => {
     const params = new URLSearchParams(searchParams);
     params.set('page', pageNumber.toString());
